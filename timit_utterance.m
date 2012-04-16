@@ -17,9 +17,8 @@ function [s,ref] = timit_utterance(timitDir,id,P)
 			};          
 	end
 
-	% read TIMIT file in voicebox directory
-	% and extract phoneme transcription
-	[x,Fs,Phn,Ffx] = readsph(fullfile(timitDir,id),'dt');
+	% read TIMIT file and extract phoneme transcription
+	[x,Fs,Phn,Ffx] = readsph(fullfile(timitDir,id),'t');
 	%
 	% scaling x back to the original signal value s
 	xmin = min(x);
