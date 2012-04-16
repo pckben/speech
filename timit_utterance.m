@@ -3,7 +3,7 @@
 % Read a speech utterance from TIMIT database and extract
 % its original scale speech signal, plus the reference label
 %
-function [s,ref] = timit_utterance(timitDir,id,P)
+function [s,ref] = timit_utterance(id,P)
 
 	if nargin < 3,
 		P = { 'iy';'ih';'eh';'ey';'ae';'aa';'aw';'ay';'ah';'ao';...
@@ -18,7 +18,7 @@ function [s,ref] = timit_utterance(timitDir,id,P)
 	end
 
 	% read TIMIT file and extract phoneme transcription
-	[x,Fs,Phn,Ffx] = readsph(fullfile(timitDir,id),'t');
+	[x,Fs,Phn,Ffx] = readsph(fullfile(timitdir,id),'t');
 	%
 	% scaling x back to the original signal value s
 	xmin = min(x);
