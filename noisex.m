@@ -3,5 +3,5 @@
 % Get noise sample from the NOISEX-92 database.
 %
 function s = noisex(id)
-	s = wavread(fullfile(noisexdir,id,'.wav'));
+	s = wavread(fullfile(noisexdir,[id,'.wav']));
 end

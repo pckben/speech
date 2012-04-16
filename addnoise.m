@@ -9,7 +9,7 @@ function [y,x_gain] = addnoise(x,n,snr)
 	% use a random noise segment
 	if Nn>Nx
 		i = randi(Nn-Nx);
-		n = n(i:i+Nx);
+		n = n(i:i+Nx-1);
 	end
 	%
 	% calculate signal and noise powers
